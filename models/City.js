@@ -12,36 +12,8 @@ City.init(
       autoIncrement: true,
     },
     name: {
-      type: DataTypes.STRING,
-      allowNull: false,
+        type: DataTypes.STRING,
     },
-    average_rating: {
-        type: DataTypes.DECIMAL(3,2),
-    },
-    nightlife_rating: {
-        type: DataTypes.DECIMAL(3,2),
-    },
-    affordability_rating: {
-        type: DataTypes.DECIMAL(3,2),
-    },
-    dining_rating: {
-        type: DataTypes.DECIMAL(3,2),
-    },
-    transportation_rating: {
-        type: DataTypes.DECIMAL(3,2),
-    },
-    familyfriendly_rating: {
-        type: DataTypes.DECIMAL(3,2),
-    },
-    nature_rating: {
-        type: DataTypes.DECIMAL(3,2),
-    },
-    weather: {
-        type: DataTypes.DECIMAL(3,2),
-    },
-    activities_rating: {
-        type: DataTypes.DECIMAL(3,2),
-    }
   },
   {
     sequelize,
