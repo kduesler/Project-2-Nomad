@@ -41,4 +41,3 @@
 [Katie Vlasic](https://github.com/katievlasic)
 
 ## Questions
-
