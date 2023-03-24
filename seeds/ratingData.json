@@ -8,7 +8,8 @@
       "familyfriendly_rating": 3.6,
       "nature_rating": 3.7,
       "weather": 3.8,
-      "activities_rating": 3.8
+      "activities_rating": 3.8,
+      "city_id": 1
     }
   ]
   
