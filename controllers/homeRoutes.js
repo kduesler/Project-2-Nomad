@@ -5,14 +5,14 @@ router.get('/', async (req, res) => {
     try {
       // Get all blogs and JOIN with user data
       const cityData = await City.findAll(
-        {
-            include: [
-              {
-                model: Comment, Rating
-                attributes: ['comment'],
-              },
-            ],
-          }
+        // {
+        //     include: [
+        //       {
+        //         model: Comment, Rating
+        //         // attributes: ['comment'],
+        //       },
+        //     ],
+        //   }
       );
   
       // Serialize data so the template can read it
