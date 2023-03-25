@@ -24,12 +24,15 @@
 5. Type `npm install --save dotenv`
 6. Type `npm install -- save express`
 7. Type `npm install -- save sequelize`
-8. Open the mysql shell using `mysql -u root -p` (enter your password when prompted)
-9. Within mysql shell, type `source db/schema.sql`
-10. Within mysql shell, type `USE employee_db;`
-11. Leave mysql shell by either typing `exit` or `Ctrl`+`c`
-12. Back in the main bash terminal, type `npm run seeds` to seed the db
-13. Type `node server.js` to begin the application
+8. Type `npm install -- save bcrypt`
+9. Type `npm install -- express-handlebars`
+10. Type `npm install -- express-session`
+11. Open the mysql shell using `mysql -u root -p` (enter your password when prompted)
+12. Within mysql shell, type `source db/schema.sql`
+13. Within mysql shell, type `USE employee_db;`
+14. Leave mysql shell by either typing `exit` or `Ctrl`+`c`
+15. Back in the main bash terminal, type `npm run seeds` to seed the db
+16. Type `node server.js` to begin the application
 
 ## Usage
 
