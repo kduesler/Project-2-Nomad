@@ -1,0 +1,19 @@
+<div>
+    {{#each cities as |city|}}
+    <div>
+        <h1>{{city.name}}</h1>
+        <div>
+            {{#each city.comments as |comment|}}
+        <p>{{comment.comment}}</p>
+
+    {{/each}}
+        </div>
+        <div>
+            <h2>Average Rating: {{city.totalRatings.average_rating}}</h2>
+            {{!-- {{#each city.ratings as |rating|}}
+        <p>Average Rating: {{rating.average_rating}}</p>
+    {{/each}} --}}
+        </div>
+    </div>
+    {{/each}}
+</div>
