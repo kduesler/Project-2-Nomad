@@ -22,6 +22,54 @@
       "weather": 3.8,
       "activities_rating": 3.8,
       "city_id": 1
+    },
+    {
+      "average_rating": 3.5,
+      "nightlife_rating": 3.2,
+      "affordability_rating": 3.3,
+      "dining_rating": 3.4,
+      "transportation_rating": 3.5,
+      "familyfriendly_rating": 3.6,
+      "nature_rating": 3.7,
+      "weather": 3.8,
+      "activities_rating": 3.8,
+      "city_id": 1
+    },
+    {
+      "average_rating": 4.9,
+      "nightlife_rating": 3.2,
+      "affordability_rating": 3.3,
+      "dining_rating": 3.4,
+      "transportation_rating": 3.5,
+      "familyfriendly_rating": 3.6,
+      "nature_rating": 3.7,
+      "weather": 3.8,
+      "activities_rating": 3.8,
+      "city_id": 1
+    },
+    {
+      "average_rating": 4.4,
+      "nightlife_rating": 3.2,
+      "affordability_rating": 3.3,
+      "dining_rating": 3.4,
+      "transportation_rating": 3.5,
+      "familyfriendly_rating": 3.6,
+      "nature_rating": 3.7,
+      "weather": 3.8,
+      "activities_rating": 3.8,
+      "city_id": 1
+    },
+    {
+      "average_rating": 4.2,
+      "nightlife_rating": 3.1,
+      "affordability_rating": 2.9,
+      "dining_rating": 3.4,
+      "transportation_rating": 3.5,
+      "familyfriendly_rating": 4.5,
+      "nature_rating": 3.7,
+      "weather": 3.8,
+      "activities_rating": 3.8,
+      "city_id": 2
     }
   ]
   

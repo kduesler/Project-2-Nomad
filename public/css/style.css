@@ -1,14 +1,35 @@
-.no-button {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    color: #1b89bc;
-    text-decoration: none;
-    font-size: 100%;
-  }
-  
-  .no-button:hover {
-    color: #065b83;
-    text-decoration: underline;
-  }
+:root {
+  --beige: #e3dac8;
+  --orange: #ff8c00;
+  --lightblue: rgba(221, 235, 240, 0.45);
+  --blue: #8dd7e7;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(var(--blue), var(--orange));
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  letter-spacing: 10px;
+  font-size: 50px;
+  background: white;
+}
+
+main {
+  background: var(--lightblue);
+}
+
+h1{
+  font-size: 40px;
+  letter-spacing: 5px;
+  text-align: center;
+}
+h2{
+  font-size: 20px;
+}
