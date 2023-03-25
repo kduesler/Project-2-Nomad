@@ -8,12 +8,11 @@ router.get("/", async (req, res) => {
       include: [
         {
           model: Comment,
-          // attributes: ['comment'],
         },
         {
           model: Rating,
-        },
-      ],
+        }
+      ]
     });
 
     // Serialize data so the template can read it
@@ -37,7 +36,7 @@ router.get("/", async (req, res) => {
     }
     // homepage reference handlebars
     res.render("homepage", {
-      cities: newCities,
+      cities: newCities
     });
   } catch (err) {
     console.log(err);
