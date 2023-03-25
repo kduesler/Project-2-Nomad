@@ -8,12 +8,11 @@ router.get("/", async (req, res) => {
       include: [
         {
           model: Comment,
-          // attributes: ['comment'],
         },
         {
           model: Rating,
-        },
-      ],
+        }
+      ]
     });
 
     // Serialize data so the template can read it
@@ -35,12 +34,9 @@ router.get("/", async (req, res) => {
       newCities.push(city);
       // push updates to newCities
     }
-    // res.json(cityData);
-    console.log(newCities);
-    // cannot have 2 res. in same endpoint
     // homepage reference handlebars
     res.render("homepage", {
-      cities: newCities,
+      cities: newCities
     });
   } catch (err) {
     console.log(err);
@@ -50,12 +46,13 @@ router.get("/", async (req, res) => {
 
 router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
-    res.redirect("/profile");
-    return;
+  try{
+    res.render("login");
   }
-
-  res.render("login");
+ catch (err) {
+  console.log(err);
+  res.status(500).json(err);
+}
 });
 
 module.exports = router;

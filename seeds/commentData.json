@@ -1,7 +1,19 @@
 [
     {
-      "comment": "seeding example",
+      "comment": "Check out the cherry and the spoon scultpure near Loring Park",
       "city_id": 1
+    },
+    {
+      "comment": "First Avenue is a great concert venue 🎸🌟",
+      "city_id": 1
+    },
+    {
+      "comment": "Go VIKINGS, SKOOOOL!",
+      "city_id": 1
+    },
+    {
+      "comment": "San Diego Botanical Garden is a must for plant lovers 🌱🌴🍋",
+      "city_id": 2
     }
   ]
   
