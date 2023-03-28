@@ -1,4 +1,4 @@
-var Rating = require('../');
+var Rating = require('../../models/Rating');    
 var insertCSS = require('insert-css');
 var style = require('./style.css.js');
 
