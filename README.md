@@ -37,6 +37,13 @@
 
 ## Usage
 
+https://nomad-city-rating.herokuapp.com/
+
+Use endpoints:
+* /api/cities
+* /api/users
+* /api/entry
+
 ## Contributing
 
 [Kyle Duesler](https://github.com/kduesler)

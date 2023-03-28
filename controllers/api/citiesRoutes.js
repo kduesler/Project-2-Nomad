@@ -1,38 +1,40 @@
 const router = require("express").Router();
-const { City } = require("../../models");
+const { City, Comment, Rating } = require("../../models");
+const withAuth = require("../../utils/auth");
 
+router.get("/", async (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  try{
+    
+    const cityData = await City.findAll({
+      include: [
+        {
+          model: Comment,
+        }
+      ]
+    });
+    const cities = cityData.map((city) => city.get({ plain: true }));
+    res.render("cityname", {
+      cities
+    });
+  }
+ catch (err) {
+  console.log(err);
+  res.status(500).json(err);
+}
+});
 
-router.post("/", /*withAuth,*/ async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
     try {
-      const cityData = await City.create(req.body, {
-        user_id: req.session.user_id,
-      });
+      const newCity = await City.create({
+              ...req.body,
+              user_id: req.session.user_id,
+            });
   
-      res.json(cityData);
-    } catch (err) {
-      res.status(400).json(err);
+      res.status(200).json(newCity);
+  } catch (err) {
+    res.status(400).json(err);
     }
   });
-
-  router.put('/:id', /*withAuth,*/ async (req,res) => {
-    try {
-      const cityData = await City.update(
-        {
-          title: req.body.title,
-          contents: req.body.contents,
-        },
-        {
-          where: {
-            id: req.params.id,
-            // user_id: req.session.user_id, 
-          },
-        }
-      )
-  
-      res.json(cityData);
-    } catch (err) {
-      res.status(400).json(err);
-    }
-  })
 
   module.exports = router;
