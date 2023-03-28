@@ -1,18 +1,34 @@
-const Rating = require('rating');
+var Rating = require('../');
+var insertCSS = require('insert-css');
+var style = require('./style.css.js');
 
-const container = document.querySelector('.rating');
-const star = document.querySelector('.star');
-star.parentNode.removeChild(star);
- 
-const rating = new Rating([1, 2, 3, 4, 5], {
+insertCSS(style);
+
+var container = document.createElement('span');
+
+var star = document.createElement('span');
+star.innerHTML = '★';
+star.className = 'star';
+
+var rating = new Rating([1, 2, 3, 4, 5], {
   container: container,
-  star: star
+  star: star,
+  readOnly: false
 });
- 
-rating.on('rate', function(weight) {
-  console.log('rated: ' + weight);
+
+document.body.appendChild(rating.el);
+window.rating = rating;
+
+var current = document.createElement('p');
+document.body.appendChild(current);
+
+var rate = document.createElement('p');
+document.body.appendChild(rate);
+
+rating.on('rate', function (weight) {
+  rate.innerHTML = 'rated: ' + weight;
 });
- 
-rating.on('select', function(weight) {
-  console.log('current: ' + weight);
+
+rating.on('select', function (weight) {
+  current.innerHTML = 'current: ' + weight;
 });
