@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/star-rating.css">
+  <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
 </head>
 
 <body>
@@ -37,10 +38,10 @@
 
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
-  <script src="/js/logout.js"></script>
+  <script src="../../public/js/rating.js"></script>
+  <script src="../../public/js/logout.js"></script>
   {{/if}}
-  <script src="./js/rating.js"></script>
-  
+  <script src="../../public/js/beginEntry.js"></script>  
 </body>
 
 </html>
