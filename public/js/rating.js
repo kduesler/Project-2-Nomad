@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-=======
-var Rating = require('../../models/Rating');    
 var insertCSS = require('insert-css');
 var style = require('./style.css.js');
 
@@ -12,11 +9,12 @@ var star = document.createElement('span');
 star.innerHTML = '★';
 star.className = 'star';
 
-var rating = new Rating([1, 2, 3, 4, 5], {
-  container: container,
-  star: star,
-  readOnly: false
-});
+// Backend entryRoutes
+// var rating = new Rating([1, 2, 3, 4, 5], {
+//   container: container,
+//   star: star,
+//   readOnly: false
+// });
 
 document.body.appendChild(rating.el);
 window.rating = rating;
@@ -34,4 +32,3 @@ rating.on('rate', function (weight) {
 rating.on('select', function (weight) {
   current.innerHTML = 'current: ' + weight;
 });
->>>>>>> f0c0d5929593ac278964262dd2d427d8203e0488
