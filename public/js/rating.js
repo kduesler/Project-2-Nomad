@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 var Rating = require('../../models/Rating');    
 var insertCSS = require('insert-css');
 var style = require('./style.css.js');
@@ -32,3 +34,4 @@ rating.on('rate', function (weight) {
 rating.on('select', function (weight) {
   current.innerHTML = 'current: ' + weight;
 });
+>>>>>>> f0c0d5929593ac278964262dd2d427d8203e0488

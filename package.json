@@ -31,6 +31,7 @@
     "mysql2": "^3.2.0",
     "save": "^2.9.0",
     "sequelize": "^6.30.0",
-    "sql-sanitizer": "^1.0.0"
+    "sql-sanitizer": "^1.0.0",
+    "spectre.css": "^0.5.9"
   }
 }
