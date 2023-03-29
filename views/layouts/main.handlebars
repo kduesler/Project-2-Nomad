@@ -4,8 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nomad</title>
-    <link rel="stylesheet" href="/css/jass.css" />
-    <link rel="stylesheet" href="/css/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -23,6 +21,8 @@
       rel="stylesheet"
       href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css"
     />
+    <link rel="stylesheet" href="/css/jass.css" />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
 
   <body>
@@ -35,12 +35,16 @@
           class="display-flex justify-space-between align-right navbar navbar-menu text-sm"
         >
           <a href="/homepage">Homepage</a>
-          {{!-- {{#if logged_in}} --}}
-            <a href="/login">Login</a>|
-          {{!-- {{else}}
-            <a href="/login">login</a>
+          {{#if logged_in}}
+          {{!-- if user has profile page, add link here! --}}
           <button class="no-button" id="logout">logout</button>
-          {{/if}} --}}
+            <figure class="avatar avatar-xl">
+            <img src={{avatar}} alt="...">
+            <i class="avatar-presence online"></i>
+            </figure>
+          {{else}}
+            <a href="/login">Login</a>|
+          {{/if}}
           <a href="/entry">Begin Entry</a>|
           <a href="/cityname">View Cities</a>|
         </nav>
@@ -56,10 +60,10 @@
 
     <!-- Render script for logged in users only -->
     {{#if logged_in}}
-      <script src="../../public/js/rating.js"></script>
-      <script src="../../public/js/logout.js"></script>
+      <script src="./js/rating.js"></script>
+      <script src="./js/logout.js"></script>
     {{/if}}
-    <script src="../../public/js/beginEntry.js"></script>
+    <script src="./js/beginEntry.js"></script>
     <script src="/js/rating.js"></script>
   </body>
 

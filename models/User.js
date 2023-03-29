@@ -35,6 +35,11 @@ User.init(
         len: [8],
       },
     },
+    // avatar: {
+    //   type: DataTypes.STRING,
+    //   allowNull: true,
+    //   defaultValue: "./img/Avatar1.PNG"
+    // }
   },
   {
     hooks: {
