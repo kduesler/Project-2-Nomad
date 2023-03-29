@@ -1,60 +1,93 @@
 const router = require("express").Router();
-const { City, Comment, Rating } = require("../../models");
+const sequelize = require("../../config/connection");
+const { City, Comment, Rating, User } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 router.get("/:id", async (req, res) => {
   // If the user is already logged in, redirect the request to another route
-  try{
-    
-    const cityData = await City.findByPk(req.params.id, {
-      include: [
-        {
-          model: Comment,
-        },
-        {
-          model: Rating
-        }
-      ]
+  try {
+    const sqlString = req.params.id;
+    const ratingsData = await Rating.findAll({
+      where: { city_id: req.params.id },
+      include: [{ model: City }, { model: User }],
+      attributes: {
+        include: [
+          [
+            sequelize.literal(
+              `(SELECT AVG(average_rating) from rating WHERE city_id=${sqlString})`
+            ),
+            "cityAverageRating",
+          ],
+          [
+            sequelize.literal(
+              `(SELECT AVG(nightlife_rating) from rating WHERE city_id=${sqlString})`
+            ),
+            "cityNightlifeRating",
+          ],
+          [
+            sequelize.literal(
+              `(SELECT AVG(affordability_rating) from rating WHERE city_id=${sqlString})`
+            ),
+            "cityAffordabilityRating",
+          ],
+          [
+            sequelize.literal(
+              `(SELECT AVG(dining_rating) from rating WHERE city_id=${sqlString})`
+            ),
+            "cityDiningRating",
+          ],
+          [
+            sequelize.literal(
+              `(SELECT AVG(transportation_rating) from rating WHERE city_id=${sqlString})`
+            ),
+            "cityTransportationRating",
+          ],
+          [
+            sequelize.literal(
+              `(SELECT AVG(familyfriendly_rating) from rating WHERE city_id=${sqlString})`
+            ),
+            "cityFamilyfriendlyRating",
+          ],
+          [
+            sequelize.literal(
+              `(SELECT AVG(nature_rating) from rating WHERE city_id=${sqlString})`
+            ),
+            "cityNatureRating",
+          ],
+          [
+            sequelize.literal(
+              `(SELECT AVG(weather) from rating WHERE city_id=${sqlString})`
+            ),
+            "cityWeatherRating",
+          ],
+          [
+            sequelize.literal(
+              `(SELECT AVG(activities_rating) from rating WHERE city_id=${sqlString})`
+            ),
+            "cityActivitiesRating",
+          ],
+        ],
+      },
     });
-    const cities = cityData.get({ plain: true });
-    
-    // Pass serialized data and session flag into template
-    for (let i = 0; i < cities.length; i++) {
-      const city = cities[i];
-      const totalRatings = {
-        //...city.ratings[0]
-        average_rating: 0,
-      };
-      for (let j = 0; j < city.ratings.length; j++) {
-        const rating = city.ratings[j];
-        totalRatings.average_rating += parseFloat(rating.average_rating);
-      }
-      totalRatings.average_rating = (totalRatings.average_rating/city.ratings.length).toFixed(1)
-      city.totalRatings = totalRatings;
-      // push updates to newCities
-    }
-    
-    res.render("cityname", {
-      cities
-    });
+    res.status(200).json(ratingsData);
+    console.log("rating Data", ratingsData);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
   }
- catch (err) {
-  console.log(err);
-  res.status(500).json(err);
-}
 });
 
 router.post("/", withAuth, async (req, res) => {
-    try {
-      const newCity = await City.create({
-              ...req.body,
-              user_id: req.session.user_id,
-            });
-  
-      res.status(200).json(newCity);
+  try {
+    const newCity = await City.create({
+      ...req.body,
+      user_id: req.session.user_id,
+    });
+
+    res.status(200).json(newCity);
   } catch (err) {
     res.status(400).json(err);
-    }
-  });
+  }
+});
 
-  module.exports = router;
+module.exports = router;
