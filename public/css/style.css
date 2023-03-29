@@ -33,3 +33,41 @@ h1{
 h2{
   font-size: 20px;
 }
+
+.stars{
+  background-color: #a7c6bf;
+  margin-left: 40px;
+}
+#night{ 
+  margin-left: 85px;
+  color: #f99020;
+}
+#aff{ 
+  margin-left: 69px;
+  color: #f99020;
+}
+#dining{ 
+  margin-left: 107px;
+  color: #f99020;
+}
+#transport{ 
+  margin-left: 50px;
+  color: #f99020;
+}
+#activity{ 
+  margin-left: 93px;
+  color: #f99020;
+}
+#family{ 
+  margin-left: 14px;
+  color: #f99020;
+}
+.city-entry{ 
+  margin: 3px;
+}
+.comment{ 
+  margin: 3px;
+}
+.city-submit{ 
+  margin: 3px;
+}
