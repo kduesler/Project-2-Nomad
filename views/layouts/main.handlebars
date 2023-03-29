@@ -7,12 +7,9 @@
   <title>Nomad</title>
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
-<<<<<<< HEAD
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-=======
   <link rel="stylesheet" href="/css/star-rating.css">
-  {{!-- <link rel="stylesheet" href="node_modules/css-star-rating/css/star-rating.css"> --}}
->>>>>>> f0c0d5929593ac278964262dd2d427d8203e0488
+  <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
 </head>
 
 <body>
@@ -42,10 +39,11 @@
 
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
-  <script src="/js/logout.js"></script>
+  <script src="../../public/js/rating.js"></script>
+  <script src="../../public/js/logout.js"></script>
   {{/if}}
+  <script src="../../public/js/beginEntry.js"></script>  
   <script src="/js/rating.js"></script>
-  
 </body>
 
 </html>
