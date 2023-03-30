@@ -18,7 +18,8 @@ const withAuth = require("../../utils/auth");
 router.post('/', /*withAuth,*/ async (req, res) => {
     try {
       const newRating = await Rating.create({
-        ...req.body
+        ...req.body,
+        user_id: req.session.user_id
       });
   
       res.status(200).json(newRating);
