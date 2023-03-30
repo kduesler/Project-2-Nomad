@@ -1,11 +1,21 @@
-      
-            <div class="city-entry">
+<div class = "container">
+        <div class="city-entry category">
         <label>City Name:</label>
-        <input class="city-input" type="text" id="city-entry"/>
+        <input class="city-input category" type="text" id="city-entry"/>
+        </div>
+
+    <div class="column category">Night Life: 
+        <select class="stars col-2" id="night">
+            <option class="one-star">★</option>
+            <option class="two-star">★★</option>
+            <option class="three-star">★★★</option>
+            <option class="four-star">★★★★</option>
+            <option class="five-star">★★★★★</option>
+        </select>
     </div>
 
-    <div class="col-12">Night Life: 
-        <select class="stars" id="night">
+    <div class="column category">Affordability: 
+           <select class="stars col-2" id="aff">
             <option class="one-star">★</option>
             <option class="two-star">★★</option>
             <option class="three-star">★★★</option>
@@ -13,31 +23,19 @@
             <option class="five-star">★★★★★</option>
         </select>
    
-</div>
-
-    <div class="col-12">Affordability: 
-           <select class="stars" id="aff">
-            <option class="one-star">★</option>
-            <option class="two-star">★★</option>
-            <option class="three-star">★★★</option>
-            <option class="four-star">★★★★</option>
-            <option class="five-star">★★★★★</option>
-        </select>
-   
     </div>
-    <div class="col-12">Dining: 
-           <select class="stars" id="dining">
+    <div class="column category">Dining: 
+           <select class="stars col-2" id="dining">
             <option class="one-star">★</option>
             <option class="two-star">★★</option>
             <option class="three-star">★★★</option>
             <option class="four-star">★★★★</option>
             <option class="five-star">★★★★★</option>
         </select>
-      
     </span>
     </div>
-    <div class="col-12">Transportation: 
-           <select class="stars" id="transport">
+    <div class="column category">Transportation: 
+           <select class="stars col-2" id="transport">
             <option class="one-star">★</option>
             <option class="two-star">★★</option>
             <option class="three-star">★★★</option>
@@ -47,8 +45,8 @@
         
     </span>
     </div>
-    <div class="col-12">Activites: 
-           <select class="stars" id="activity">
+    <div class="column category">Activites: 
+           <select class="stars col-2" id="activity">
             <option class="one-star">★</option>
             <option class="two-star">★★</option>
             <option class="three-star">★★★</option>
@@ -58,8 +56,8 @@
        
     </span>
     </div>
-    <div class="col-12">Family Friendliness: 
-           <select class="stars" id="family">
+    <div class="column category">Family Friendliness: 
+           <select class="stars col-2" id="family">
             <option class="one-star">★</option>
             <option class="two-star">★★</option>
             <option class="three-star">★★★</option>
@@ -69,12 +67,14 @@
    
     </span>
     </div>
-</div>
 
-  <div class="comment">
+  <div class="comment category">
         <label>Leave a special comment:</label>
         <input id="entry-input" type="text" />
       </div>
+</div>
+</div>
+</div>
 
   <div class="city-submit">
         <button class="btn btn-primary" type="submit"> Submit</button>
