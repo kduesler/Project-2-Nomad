@@ -29,7 +29,11 @@
     "express-session": "^1.17.3",
     "inquirer": "^8.2.4",
     "mysql2": "^3.2.0",
+    "sanitizer": "^0.1.3",
     "save": "^2.9.0",
-    "sequelize": "^6.30.0"
+    "sequelize": "^6.30.0",
+    "spectre.css": "^0.5.9",
+    "sql": "^0.78.0",
+    "sql-sanitizer": "^1.0.0"
   }
 }

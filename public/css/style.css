@@ -5,6 +5,10 @@
   --blue: #8dd7e7;
 }
 
+.navbar {
+  font-size: 20px;
+}
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -75,3 +79,8 @@ h2{
 .city-submit{ 
   margin: 3px;
 }
+.category {
+  display: flex;
+  justify-content: space-between;
+  }
+  

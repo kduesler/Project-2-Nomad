@@ -11,9 +11,11 @@ router.get("/", async (req, res) => {
         },
         {
           model: Rating,
-        }
+        }, 
       ]
     });
+    
+    // const userAvatar = await User.
 
     // Serialize data so the template can read it
     const cities = cityData.map((city) => city.get({ plain: true }));
@@ -34,9 +36,12 @@ router.get("/", async (req, res) => {
       newCities.push(city);
       // push updates to newCities
     }
+    console.log(req.session);
     // homepage reference handlebars
     res.render("homepage", {
-      cities: newCities
+      cities: newCities,
+      logged_in: req.session.logged_in,
+      avatar: "./img/Avatar1.PNG"
     });
   } catch (err) {
     console.log(err);
@@ -47,12 +52,43 @@ router.get("/", async (req, res) => {
 router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   try{
-    res.render("login");
+    res.render("login", {
+      logged_in: req.session.logged_in,
+      avatar: "./img/Avatar1.PNG"
+    });
   }
  catch (err) {
   console.log(err);
   res.status(500).json(err);
 }
 });
+
+router.get("/entry", async (req, res) => {
+  try {
+    const cityData = await City.findAll({
+      include: [
+        {
+          model: Comment,
+        },
+        {
+          model: Rating,
+        }
+      ]
+    });
+
+    // Serialize data so the template can read it
+    const cities = cityData.map((city) => city.get({ plain: true }));
+    // homepage reference handlebars
+    res.render("entry", {
+      cities,
+      logged_in: req.session.logged_in,
+      avatar: "./img/Avatar1.PNG"
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 
 module.exports = router;

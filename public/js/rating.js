@@ -1,16 +1,22 @@
-const city = document.querySelector('#city-entry').value.trim();
-const comment = document.querySelector('#entry-input').value.trim();
+<<<<<<< HEAD
+=======
+var Rating = require('../../models/Rating');    
+var insertCSS = require('insert-css');
+var style = require('./style.css.js');
 
 
 const submitcity = async (event) => {
     event.preventDefault();
 
-if ( city && comment) {
-    const response = await fetch('/api/entry', {
-      method: 'POST',
-      body: JSON.stringify({ city, comment }),
-      headers: { 'Content-Type': 'application/json' },
-    });
+var star = document.createElement('span');
+star.innerHTML = '★';
+star.className = 'star';
+
+var rating = new Rating([1, 2, 3, 4, 5], {
+  container: container,
+  star: star,
+  readOnly: false
+});
 
     if (response.ok) {
       document.location.replace('/');
@@ -23,3 +29,7 @@ if ( city && comment) {
 document.querySelector('.cityform')
 document.addEventListener('submit', submitcity);
 
+rating.on('select', function (weight) {
+  current.innerHTML = 'current: ' + weight;
+});
+>>>>>>> f0c0d5929593ac278964262dd2d427d8203e0488
