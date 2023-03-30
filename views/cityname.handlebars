@@ -1,19 +1,19 @@
-<h1>{{weather}}</h1>
-
-{{!-- <div>
-  <h2>Average Rating: {{}}</h2>
-</div> --}}
+<h1>{{city.name}}</h1>
+<div>
+  <h2>Average Rating: {{cityAverageRating}}</h2>
+</div>
 
 <div class="category">
-  <div>Night Life: 
-    
-    {{!-- {{nightLifeCityAverage}} --}}
+  <div>Night Life: {{cityNightlifeRating}}
+  
     </div>
-  <div>Affordability</div>
-  <div>Dining</div>
-  <div>Transportation</div>
-  <div>Activites</div>
-  <div>Family Friendliness</div>
+  <div>Affordability: {{cityAffordabilityRating}}</div>
+  <div>Dining: {{cityDiningRating}}</div>
+  <div>Transportation: {{cityTransportationRating}}</div>
+  <div>Family Friendliness{{cityFamilyfriendlyRating}}</div>
+   <div>Nature: {{cityNatureRating}}</div>
+  <div>Weather: {{cityWeatherRating}}</div>
+   <div>Activites: {{cityActivitiesRating}}</div>
 </div>
 
    <div class="reviews">

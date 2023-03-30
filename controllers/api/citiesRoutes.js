@@ -70,8 +70,10 @@ router.get("/:id", async (req, res) => {
       },
     });
     const cityRatings = ratingsData.map((rating) => rating.get({ plain: true }));
-    // res.status(200).json(ratingsData);
-    res.render("cityname", { cityRatings });
+    const cityAverages = cityRatings[0];
+    // Object.values(cityAverages).forEach((item, i, source) => source[i] = typeof item ==="number" ? item.toPrecision(2) : item)
+    // res.status(200).json(cityAverages);
+    res.render("cityname", { ...cityAverages});
   } 
   catch (err) {
     console.log(err);
