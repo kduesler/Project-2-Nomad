@@ -15,6 +15,11 @@ body {
   background-image: linear-gradient(var(--blue), var(--orange));
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
 header {
   display: flex;
   justify-content: center;
@@ -41,37 +46,39 @@ h2{
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 .stars{
   background-color: #a7c6bf;
-  margin-left: 40px;
+  margin-left: 10px;
 }
 #night{ 
-  margin-left: 85px;
+  /* margin-left: 85px; */
   color: #f99020;
 }
 #aff{ 
-  margin-left: 66px;
+  /* margin-left: 66px; */
   color: #f99020;
 }
 #dining{ 
-  margin-left: 108px;
+  /* margin-left: 108px; */
   color: #f99020;
 }
 #transport{ 
-  margin-left: 48px;
+  /* margin-left: 48px; */
   color: #f99020;
 }
 #activity{ 
-  margin-left: 92px;
+  /* margin-left: 92px; */
   color: #f99020;
 }
 #family{ 
-  margin-left: 17px;
+  /* margin-left: 17px; */
   color: #f99020;
 }
 .city-entry{ 
   margin: 3px;
+  text-align: right;
 }
 .comment{ 
   margin: 3px;
@@ -81,6 +88,7 @@ h2{
 }
 .category {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: flex-end;
   }
   
