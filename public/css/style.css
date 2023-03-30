@@ -5,6 +5,10 @@
   --blue: #8dd7e7;
 }
 
+.navbar {
+  font-size: 20px;
+}
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;

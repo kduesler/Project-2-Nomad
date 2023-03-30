@@ -1,8 +1,6 @@
 const router = require("express").Router();
 const { City, Comment, Rating } = require("../../models");
-// const withAuth = require("../utils/auth");
-
-
+const withAuth = require("../../utils/auth");
 
 //   router.post('/', async (req, res) => {
 //   try {
@@ -17,7 +15,7 @@ const { City, Comment, Rating } = require("../../models");
 //   }
 // });
 
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
       const newRating = await Rating.create({
         ...req.body
