@@ -1,9 +1,10 @@
 # Nomad
-# Project-2-Nomad
 
 ## Description
 
-![Preview]()
+This application can be used to connect users that have opinions about cities! Users can rate a given city based on the following categories: night life, affodability, dining, transporataion, activities, and family friendliness. The rating will be out of 5 stars with 5 being the highest rating 🤩. 
+
+![Preview](./public/img/previewApplication.jpg)
 
 ## Table of Contents
 
@@ -19,39 +20,43 @@
 
 1. Go to root directory
 2. npm init -y
-3. Type `npm i inquirer@8.2.4` in the terminal 
-4. Type `npm install --save mysql2`
-5. Type `npm install --save dotenv`
-6. Type `npm install -- save express`
-7. Type `npm install -- save sequelize`
-8. Type `npm install -- save bcrypt`
-9. Type `npm install -- save express-handlebars`
-10. Type `npm install -- save express-session`
-11. Type `npm install -- save connect-session-sequelize`
-12. Open the mysql shell using `mysql -u root -p` (enter your password when prompted)
-13. Within mysql shell, type `source db/schema.sql`
-14. Within mysql shell, type `USE employee_db;`
-15. Leave mysql shell by either typing `exit` or `Ctrl`+`c`
-16. Back in the main bash terminal, type `npm run seeds` to seed the db
-17. Type `node server.js` to begin the application
+3. Type in the terminal the following:
+* `npm i inquirer@8.2.4` 
+* `npm install --save mysql2`
+* `npm install --save dotenv`
+* `npm install -- save express`
+* `npm install -- save sequelize`
+* `npm install -- save bcrypt`
+* `npm install -- save express-handlebars`
+* `npm install -- save express-session`
+* `npm install -- save connect-session-sequelize`
+* `npm install -- save sql sanitizer`
+4. Open the mysql shell using `mysql -u root -p` (enter your password when prompted)
+5. Within mysql shell, type `source db/schema.sql`
+6. Within mysql shell, type `USE employee_db;`
+7. Leave mysql shell by either typing `exit` or `Ctrl`+`c`
+8. Back in the main bash terminal, type `npm run seeds` to seed the db
+9. Type `node server.js` to begin the application
 
 ## Usage
 
-https://nomad-city-rating.herokuapp.com/
+Navigate through the [application](https://nomad-city-rating.herokuapp.com/) to login as a user, view cities, and the homepage provides a summary of previously rated top cities. This can be useful when navigating travel plans or planning future travel.
 
-Use endpoints:
-* /api/cities
-* /api/users
-* /api/entry
+Active endpoints:
+* /login
+* /cities
+* /entry
 
 ## Contributing
 
 [Kyle Duesler](https://github.com/kduesler)
+
 [Justin Mbanefo](https://github.com/Jmbanefo)
+
 [Gloria Yang](https://github.com/msgloriayang)
+
 [Katie Vlasic](https://github.com/katievlasic)
 
 ## Questions
 
-
-npm install sql sanitizer
+Please contact any of the contributors with any questions. 

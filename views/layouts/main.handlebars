@@ -29,12 +29,12 @@
     <div class="flex-column justify-space-around">
       <header class="display-flex justify-space-between align-left p-2">
         <h1>
-          <a href="/">Nomad</a>
+          Nomad
         </h1>
         <nav
           class="display-flex justify-space-between align-right navbar navbar-menu text-sm"
         >
-          <a href="/">Homepage</a>
+          <a href="/">Homepage</a>|
           {{#if logged_in}}
           {{!-- if user has profile page, add link here! --}}
           <button class="no-button" id="logout">logout</button>
@@ -46,8 +46,7 @@
             <a href="/login">Login</a>|
           {{/if}}
           <a href="/entry">Begin Entry</a>|
-          {{!-- <a href="/City">View Cities</a>| --}}
-          <input type="text" placeholder="Search..">
+          <a href="/cityname">View Cities</a>
         </nav>
       </header>
       <main class="container container-fluid mt-5">
