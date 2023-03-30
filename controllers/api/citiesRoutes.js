@@ -71,7 +71,6 @@ router.get("/:id", async (req, res) => {
     });
     const cityRatings = ratingsData.map((rating) => rating.get({ plain: true }));
     // res.status(200).json(ratingsData);
-    console.log('LOOK HERE FOR LOGGED RATINGSS!!!!', cityRatings);
     res.render("cityname", { cityRatings });
   } 
   catch (err) {
@@ -88,11 +87,10 @@ router.get("/:id", async (req, res) => {
   // }
 });
 
-router.post("/", withAuth, async (req, res) => {
+router.post("/", /*withAuth,*/ async (req, res) => {
   try {
     const newCity = await City.create({
       ...req.body,
-      user_id: req.session.user_id,
     });
 
     res.status(200).json(newCity);
