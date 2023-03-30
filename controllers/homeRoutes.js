@@ -91,4 +91,33 @@ router.get("/entry", async (req, res) => {
 });
 
 
+router.get("/cityname", async (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  try{
+
+    const cityData = await City.findAll({
+      include: [
+        {
+          model: Comment,
+        },
+        {
+          model: Rating,
+        }, 
+      ]
+    });
+    const cities = cityData.map((city) => city.get({ plain: true }));
+    res.render("cityname", {
+      cities: cityData,
+      logged_in: req.session.logged_in,
+      avatar: "./img/Avatar1.PNG"
+    });
+  }
+ catch (err) {
+  console.log(err);
+  res.status(500).json(err);
+}
+});
+
+
+
 module.exports = router;
