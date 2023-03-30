@@ -15,13 +15,13 @@ const withAuth = require("../../utils/auth");
 //   }
 // });
 
-router.post('/', withAuth, async (req, res) => {
+router.post('/', /*withAuth,*/ async (req, res) => {
     try {
       const newRating = await Rating.create({
         ...req.body
       });
   
-      res.status(200).json(newComment);
+      res.status(200).json(newRating);
     } catch (err) {
       res.status(400).json(err);
     }

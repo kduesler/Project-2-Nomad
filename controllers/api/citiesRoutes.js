@@ -69,12 +69,23 @@ router.get("/:id", async (req, res) => {
         ],
       },
     });
-    res.status(200).json(ratingsData);
-    console.log("rating Data", ratingsData);
-  } catch (err) {
+    const cityRatings = ratingsData.map((rating) => rating.get({ plain: true }));
+    // res.status(200).json(ratingsData);
+    console.log('LOOK HERE FOR LOGGED RATINGSS!!!!', cityRatings);
+    res.render("cityname", { cityRatings });
+  } 
+  catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
+  // try {
+  //   res.render("cityname", {
+  //     ratingsData,
+  //   });
+  // } catch (err) {
+  //   console.log(err);
+  //   res.status(500).json(err);
+  // }
 });
 
 router.post("/", withAuth, async (req, res) => {
